@@ -140,6 +140,64 @@ class Usuario {
         $conn = Banco::getConn();
         $sql = "SELECT * FROM usuarios WHERE 1=1";
         $params = [];
+
+        if (!empty($filtros['nome'])) {
+            $sql .= "AND nome LIKE :nome";;
+            $params[':nome'] = '%' . $filtros['nome'] . '%';
+        }
+    }
+
+     public function atualizar() {
+        $conn = Banco::getConn();
+
+        if (!empty($this->senha)) {
+            $sql = "UPDATE usuarios SET
+                        nome = :nome,
+                        email = :email,
+                        usuario = :usuario,
+                        senha = :senha,
+                        cpf = :cpf,
+                        data_nascimento = :data_nascimento,
+                        token_recuperacao = :token_recuperacao,
+                        data_token = :data_token,
+                        ultimo_acesso = :ultimo_acesso,
+                        ativo = :ativo
+                    WHERE id = :id";
+        } else {
+            $sql = "UPDATE usuarios SET
+                        nome = :nome,
+                        email = :email,
+                        usuario = :usuario,
+                        cpf = :cpf,
+                        data_nascimento = :data_nascimento,
+                        token_recuperacao = :token_recuperacao,
+                        data_token = :data_token,
+                        ultimo_acesso = :ultimo_acesso,
+                        ativo = :ativo
+                    WHERE id = :id";
+        }
+    }
+
+    public function excluir() {
+        if (!$this->ativo) {
+            return false;
+        }
+        $conn = Banco::getConn();
+
+        $sql = "UPDATE usuarios SET ativo = 0 WHERE id = :id";
+        $stmt = $conn ->prepare($sql);
+        $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            $this->ativo = false;
+            return true;
+        } 
+
+        return false;
+    }
+
+    public static function autenticar($usuario, $senha) {
+        
     }
 }
 
