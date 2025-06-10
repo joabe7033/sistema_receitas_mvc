@@ -1,6 +1,6 @@
 <h1>Cadastro de Usuário</h1>
 
-<form action="?page=Cadastrar" method="$_POST">
+<form action="?page=Cadastrar" method="POST">
     <input type ="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
         <label>Nome</label>
