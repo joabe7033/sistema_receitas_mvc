@@ -10,15 +10,16 @@ class UsuarioController
     public static function novoCadastro()
     {
         include "View/Cadastro.php";
+        
     }
 
-    public static function listarUsuarios()
+    public static function login ()
     {
-        include "View/ListarUsuario.php";
+        include "View/Login.php";
     }
 
-    public static function cadastrarUsuario()
-    {
-        include "Model/CadastrarUsuario.php";
-    }
+    public static function areaUser()
+   {
+        include "View/AreaUsuario.php";
+   } 
 }
