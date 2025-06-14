@@ -40,7 +40,7 @@ class Usuario {
     public function getUsuario() { return $this->usuario; }
     public function setUsuario($usuario) { $this->usuario = $usuario; }
 
-    public function setSenha($senha) { $this->senha = $senha; }
+    public function setSenha($senha) { $this->senha = Seguranca::criptografarSenha($senha); }
 
     public function getCpf() { return $this->cpf; }
     public function setCpf($cpf) { $this->cpf = $cpf; }
