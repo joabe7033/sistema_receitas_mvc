@@ -51,7 +51,7 @@ if (!isset($_SESSION['nomeUsuario'])) {
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../logout.php">Sair</a>
+                        <a class="nav-link" href="logout.php">Sair</a>
                     </li>
                 </ul>
             </div>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['nomeUsuario'])) {
 
     <div class="container py-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?></h2>
+            <h2>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nomeUsuario']); ?></h2>
             <button class="btn btn-receita">+ Criar Nova Receita</button>
         </div>
 

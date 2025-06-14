@@ -1,6 +1,6 @@
 
 <?php
-require_once("Config/Banco.php");
+require_once "config/Banco.php";
 
 function cadastrarUsuario($nome, $nomeUsuario, $senha)
 {
@@ -42,7 +42,7 @@ function cadastrarUsuario($nome, $nomeUsuario, $senha)
               </div>";
         echo "<script>
                 setTimeout(function() {
-                    window.location.href = 'View/AreaUsuario.php';
+                    window.location.href = 'view/AreaUsuario.php';
                 }, 2000);
               </script>";
     } catch (PDOException $e) {

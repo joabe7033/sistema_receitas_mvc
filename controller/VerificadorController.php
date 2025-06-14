@@ -40,7 +40,7 @@ class VerificadorController
 
         if ($user && password_verify($senha, $user['senha'])) {
             session_start();
-            $_SESSION['usuario'] = $user ['nomeUsuario'];
+            $_SESSION['nomeUsuario'] = $user ['nomeUsuario'];
             header("Location: index.php?p=areaUsuario");
             exit;
         } else {

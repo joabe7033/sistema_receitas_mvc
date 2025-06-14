@@ -48,7 +48,7 @@
                         <i class="bi bi-egg-fried"></i> Login do Chef
                     </h3>
 
-                    <form action="login_processa.php" method="post">
+                    <form action="index.php?p=verificarLogin" method="post">
                         <div class="mb-3">
                             <label for="usuario" class="form-label">👨‍🍳 Nome de Usuário</label>
                             <input type="text" name="usuario" class="form-control" placeholder="Digite seu usuário" required>

@@ -37,7 +37,7 @@
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Junte-se à nossa Cozinha!</h2>
                         <p class="text-center text-muted">Cadastre-se para compartilhar e descobrir receitas deliciosas.</p>
-                        <form action="index.php?p=vereficador" method="POST">
+                        <form action="index.php?p=verificarCadastro" method="POST">
                             <input type="hidden" name="acao" value="cadastrar">
                             
                             <div class="mb-3">

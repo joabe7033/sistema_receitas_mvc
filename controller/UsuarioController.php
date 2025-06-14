@@ -4,22 +4,21 @@ class UsuarioController
 {
     public static function home()
     {
-        include "View/Home.php";
+        include "view/Home.php";
     }
 
     public static function novoCadastro()
     {
-        include "View/Cadastro.php";
-        
+        include "view/Cadastro.php";
     }
 
-    public static function login ()
+    public static function login()
     {
-        include "View/Login.php";
+        include "view/Login.php";
     }
 
     public static function areaUser()
-   {
-        include "View/AreaUsuario.php";
-   } 
+    {
+        include "view/AreaUsuario.php";
+    }
 }

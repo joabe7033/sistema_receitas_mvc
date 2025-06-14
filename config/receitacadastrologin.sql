@@ -27,11 +27,14 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `usuario`
 --
 
+CREATE DATABASE IF NOT EXISTS receitacadastrologin;
+USE receitacadastrologin;
+
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `nomeUsuario` varchar(45) NOT NULL,
-  `senha` varchar(20) NOT NULL
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

@@ -1,0 +1,12 @@
+# Arquivo de banco
+/config/sistema_receitas 20.45.15.sql
+
+# Controller
+/controller/BaseController.php
+
+# Model
+/model/Usuario.php
+
+# Views
+/view/templates/
+/view/usuario/
