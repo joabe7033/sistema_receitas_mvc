@@ -34,14 +34,16 @@ CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `nomeUsuario` varchar(45) NOT NULL,
-  `senha` varchar(255) NOT NULL
+  `senha` varchar(255) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `data_nascimento` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `nomeUsuario`, `senha`) VALUES
+INSERT INTO `usuario` (`id`, `nome`, `nomeUsuario`, `senha`, `cpf`, `data_nascimento`) VALUES
 (1, 'aaa', 'aa', '$2y$10$cceFCsp0mXUoD'),
 (2, 'aaa', 'aa', '$2y$10$fwuJxjqFFkCqL'),
 (3, 'hh', 'jj', '$2y$10$o7hmAhAbySBmZ');
@@ -55,6 +57,8 @@ INSERT INTO `usuario` (`id`, `nome`, `nomeUsuario`, `senha`) VALUES
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
+  ADD COLUMN token_recuperacao VARCHAR(100) DEFAULT NULL,
+  ADD COLUMN data_token DATETIME DEFAULT NULL;
 
 --
 -- AUTO_INCREMENT para tabelas despejadas

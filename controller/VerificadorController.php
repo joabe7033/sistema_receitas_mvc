@@ -19,16 +19,19 @@ class VerificadorController
             $nome = $_POST['nome'] ?? '';
             $nomeUsuario = $_POST['nomeUsuario'] ?? '';
             $senha = $_POST['senha'] ?? '';
-
+            $cpf = $_POST['cpf'] ?? '';
+            
+            $data_nascimento = $_POST['data_nascimento'] ?? '';
+ 
             // Validação no Controller
-            if (empty($nome) || empty($nomeUsuario) || empty($senha)) {
+            if (empty($nome) || empty($nomeUsuario) || empty($senha) || empty($cpf) || empty($data_nascimento)) {
                 echo "Preencha todos os campos!";
                 exit;
             }
 
-            // Redireciona para o arquivo responsável pelo cadastro (CadastrarUsuario.php)
-            require_once("model/CadastrarUsuario.php");
-            Usuario::cadastrarUsuario($nome, $nomeUsuario, $senha);
+            // Redireciona para o arquivo responsável pelo cadastro (Usuario.php)
+            require_once("model/Usuario.php");
+            Usuario::cadastrarUsuario($nome, $nomeUsuario, $senha, $cpf, $data_nascimento);
         }
     }
 
