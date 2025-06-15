@@ -17,6 +17,7 @@ match ($url[0]) {
     "verificarLogin"=>VerificadorController::verificarLogin(),
     "login"=>UsuarioController::login(),//view
     "areaUsuario"=>UsuarioController::areaUser(),
+    "logout" => UsuarioController::logout(),
     default => UsuarioController::home(),
 };
 ?>

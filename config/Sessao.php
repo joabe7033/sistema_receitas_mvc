@@ -7,13 +7,13 @@ class Sessao {
         }
     }
 
-    public static function set($chave, $valor) {
+    /*public static function set($chave, $valor) {
         $_SESSION[$chave] = $valor;
     }
 
     public static function get($chave) {
         return isset($_SESSION[$chave]) ? $_SESSION[$chave] : null;
-    }
+    }*/
 
     public static function remove($chave) {
         if (isset($_SESSION[$chave])){

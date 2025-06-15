@@ -39,36 +39,31 @@
                         <p class="text-center text-muted">Cadastre-se para compartilhar e descobrir receitas deliciosas.</p>
                         <form action="index.php?p=verificarCadastro" method="POST">
                             <input type="hidden" name="acao" value="cadastrar">
-                            
+                            <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Seu nome</label>
                                 <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" required>
                             </div>
-
                             <div class="mb-3">
                                 <label for="nomeUsuario" class="form-label">Nome de Chef</label>
                                 <input type="text" name="nomeUsuario" class="form-control" placeholder="Escolha seu nome na cozinha" required>
                             </div>
-
                             <div class="mb-3">
                                 <label for="senha" class="form-label">Senha Secreta</label>
                                 <input type="password" name="senha" class="form-control" placeholder="Até 20 caracteres" maxlength="20" required>
                             </div>
-
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-primary">Entrar para a cozinha</button>
                             </div>
                         </form>
                     </div>
                 </div>
-
                 <div class="text-center mt-3">
                     <a href="index.php?p=home" class="btn btn-link">Voltar para o cardápio principal</a>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- JS do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

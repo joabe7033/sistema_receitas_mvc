@@ -49,6 +49,7 @@
                     </h3>
 
                     <form action="index.php?p=verificarLogin" method="post">
+                        <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>">
                         <div class="mb-3">
                             <label for="usuario" class="form-label">👨‍🍳 Nome de Usuário</label>
                             <input type="text" name="usuario" class="form-control" placeholder="Digite seu usuário" required>
