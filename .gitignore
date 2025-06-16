@@ -5,7 +5,7 @@
 /controller/BaseController.php
 
 # Model
-/model/Usuario.php
+/model/UsuarioEX.php
 
 # Views
 /view/templates/

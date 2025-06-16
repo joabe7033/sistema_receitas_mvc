@@ -16,13 +16,18 @@ error_reporting(E_ALL);
 
 // Roteamento usando match (PHP 8+)
 match ($url[0]) {
-    "cadastro" => UsuarioController::novoCadastro(),
-    //"listar" => UsuarioController::listarUsuarios(), opcional
-    "verificarCadastro"=>VerificadorController::verificarCadastro(),
-    "verificarLogin"=>VerificadorController::verificarLogin(),
-    "login"=>UsuarioController::login(),//view
-    "areaUsuario"=>UsuarioController::areaUser(),
-    "novaReceita" => ReceitaController::novaReceita(), // Exibe/cadastra nova receita
-    default => UsuarioController::home(),
+    "cadastro"            => UsuarioController::novoCadastro(),
+    // "listar"           => UsuarioController::listarUsuarios(),
+    "verificarCadastro"   => VerificadorController::verificarCadastro(),
+    "verificarLogin"      => VerificadorController::verificarLogin(),
+    "login"               => UsuarioController::login(),
+    "recuperarSenha"      => UsuarioController::recuperarSenhaForm(),
+    "enviarRecuperacao"   => UsuarioController::enviarRecuperacao(),
+    "resetarSenha"        => UsuarioController::resetarSenhaForm(),
+    "salvarNovaSenha"     => UsuarioController::salvarNovaSenha(),
+    "areaUsuario"         => UsuarioController::areaUser(),
+    "novaReceita"         => ReceitaController::novaReceita(),
+    "logout"              => UsuarioController::logout(),
+    default               => UsuarioController::home(),
 };
 ?>

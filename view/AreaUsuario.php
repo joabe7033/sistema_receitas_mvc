@@ -1,11 +1,6 @@
 <?php
-session_start();
-
-// Verifica se o usuário está logado
-if (!isset($_SESSION['nomeUsuario'])) {
-    header('Location: index.php?p=login'); // ou onde estiver sua tela de login
-    exit;
-}
+require_once __DIR__ . '/../config/Sessao.php';
+Sessao::iniciar();
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +46,10 @@ if (!isset($_SESSION['nomeUsuario'])) {
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Sair</a>
+                        <a class="nav-link" href="index.php?p=home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?p=logout">Sair</a>
                     </li>
                 </ul>
             </div>
