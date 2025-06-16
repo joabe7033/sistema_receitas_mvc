@@ -1,6 +1,7 @@
 <?php
 
 require_once "config/Sessao.php";
+require_once "controller/MensagensController.php";
 
 class VerificadorController
 {
@@ -71,10 +72,14 @@ class VerificadorController
                 header("Location: index.php?p=areaUsuario");
                 exit;
             } else {
-                header("Location: index.php?p=login&erro=1");
+                MensagensController::exibir(
+                    "Erro login ou senha errado! ",
+                    "erro",
+                    "index.php?p=login",
+                    2
+                );
                 exit;
             }
         }
     }
 }
-?>

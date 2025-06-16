@@ -11,6 +11,21 @@ class UsuarioController
         include "view/Home.php";
     }
 
+    public static function sobreNos()
+    {
+        Sessao::iniciar();
+        include "view/SobreNos.php";
+    }
+
+    // MÉTODO ALTERADO AQUI!
+    public static function dicasDeCozinha() // Renomeado de 'contato' para 'dicasDeCozinha'
+    {
+        Sessao::iniciar();
+        include "view/DicasDeCozinha.php"; // Atualizado para o novo nome do arquivo da view
+    }
+
+    // O método 'nossaEquipe()' foi removido daqui.
+
     public static function novoCadastro()
     {
         Sessao::iniciar();
@@ -77,9 +92,8 @@ class UsuarioController
     public static function areaUser()
     {
         Sessao::iniciar();
-        // Verifica se o usuário está logado
         if (!isset($_SESSION['nomeUsuario'])) {
-            header('Location: index.php?p=login'); // ou onde estiver sua tela de login
+            header('Location: index.php?p=login');
             exit;
         }
         include "view/AreaUsuario.php";

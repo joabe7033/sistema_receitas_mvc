@@ -1,5 +1,7 @@
 <?php
     require_once "config/Sessao.php";
+    require_once "controller/MensagensController.php"; // Precisa incluir o controller!
+
     Sessao::iniciar();
     $erro = Sessao::get('erro');
     Sessao::remove('erro');
@@ -15,9 +17,7 @@
     <body class="bg-light">
         <div class="container mt-5">
             <h2 class="mb-4">Cadastrar Nova Receita</h2>
-            <?php if ($erro): ?>
-                <div class="alert alert-danger"><?php echo $erro; ?></div>
-            <?php endif; ?>
+            
             <form method="post" action="index.php?p=novaReceita">
                 <div class="mb-3">
                     <label for="titulo" class="form-label">Título da Receita</label>

@@ -40,5 +40,7 @@ class Receita {
         $stmt = $conn->query($sql);
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Receita');
     }
+
+
 }
 ?>
