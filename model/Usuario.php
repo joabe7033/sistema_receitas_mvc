@@ -1,6 +1,7 @@
 <?php
 require_once "config/Banco.php";
 require_once "config/Sessao.php";
+require_once "Controller/MensagensController.php";
 
 class Usuario
 {
@@ -17,8 +18,12 @@ class Usuario
         ]);
 
         if ($stmtCheck->fetchColumn() > 0) {
-            echo "Nome ou nome de usuário já cadastrado.";
-            header("refresh:2; url=index.php?p=home");
+             MensagensController::exibir(
+                "Erro Usuário já cadatrado!",
+                "alerta",
+                "index.php?p=cadastro",
+                2
+            );
             return;
         }
 
@@ -42,17 +47,17 @@ class Usuario
             $_SESSION['cpf'] = $cpf;
             $_SESSION['data_nascimento'] = $data_nascimento;
 
-            // Redireciona após 2 segundos
-            echo "<div style='text-align:center; font-family:sans-serif; margin-top:20px; color:green;'>
-                    Usuário cadastrado com sucesso! Redirecionando para área do usuario...
-                  </div>";
-            echo "<script>
-                    setTimeout(function() {
-                        window.location.href = 'index.php?p=areaUsuario';
-                    }, 2000);
-                  </script>";
+            MensagensController::exibir(
+                "Usuário cadastrado com sucesso! Redirecionando para área do usuário...",
+                "sucesso",
+                "index.php?p=areaUsuario",
+                2
+            );
         } catch (PDOException $e) {
-            echo "Erro ao cadastrar: " . $e->getMessage();
+            MensagensController::exibir(
+                "Erro ao cadastrar: " . $e->getMessage(),
+                "erro"
+            );
         }
     }
 
