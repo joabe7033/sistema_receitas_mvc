@@ -25,6 +25,8 @@ match ($url[0]) {
     "salvarNovaSenha"       => UsuarioController::salvarNovaSenha(),
     "areaUsuario"           => UsuarioController::areaUser(),
     "novaReceita"           => ReceitaController::novaReceita(),
+    "editarReceita"         => ReceitaController::editarReceita(),
+    "excluirReceita"        => ReceitaController::excluirReceita(),
     "logout"                => UsuarioController::logout(),
 
     "sobreNos"              => UsuarioController::sobreNos(),

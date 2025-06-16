@@ -1,10 +1,11 @@
 <?php
     require_once "config/Sessao.php";
-    require_once "controller/MensagensController.php"; // Precisa incluir o controller!
+    require_once "controller/MensagensController.php";
 
     Sessao::iniciar();
     $erro = Sessao::get('erro');
     Sessao::remove('erro');
+
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +32,7 @@
                     <label for="instrucoes" class="form-label">Instruções</label>
                     <textarea class="form-control" id="instrucoes" name="instrucoes" rows="4" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-success">Salvar Receita</button>
-                <a href="index.php?p=areaUsuario" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-success"><?= isset($receita) ? 'Atualizar Receita' : 'Salvar Receita' ?></button>                <a href="index.php?p=areaUsuario" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
     </body>

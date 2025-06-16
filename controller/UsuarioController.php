@@ -8,6 +8,8 @@ class UsuarioController
     public static function home()
     {
         Sessao::iniciar();
+        require_once "model/Receita.php";
+        $receitas = Receita::findAll();
         include "view/Home.php";
     }
 
@@ -96,6 +98,8 @@ class UsuarioController
             header('Location: index.php?p=login');
             exit;
         }
+        require_once "model/Receita.php";
+        $receitas = Receita::findAll();
         include "view/AreaUsuario.php";
     }
 

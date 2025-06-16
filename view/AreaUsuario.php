@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/Sessao.php';
 Sessao::iniciar();
+if (!isset($receitas)) $receitas = [];
 ?>
 
 <!DOCTYPE html>
@@ -66,20 +67,26 @@ Sessao::iniciar();
         </div>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <!-- Aqui você pode fazer um loop para mostrar as receitas do banco -->
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome da Receita</h5>
-                        <p class="card-text">Descrição curta da receita ou ingredientes principais...</p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-sm btn-outline-warning">Editar</button>
-                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+            <?php if (!empty($receitas)): ?>
+                <?php foreach ($receitas as $receita): ?>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= htmlspecialchars($receita->titulo ?? '') ?></h5>
+                                <p class="card-text"><?= nl2br(htmlspecialchars($receita->ingredientes ?? '')) ?></p>
+                                <div class="d-flex justify-content-between">
+                                     <a href="index.php?p=editarReceita&id=<?= $receita->getId() ?>" class="btn btn-sm btn-outline-warning">Editar</a>
+                                     <a href="index.php?p=excluirReceita&id=<?= $receita->getId() ?>" class="btn btn-sm btn-outline-danger">Excluir</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col">
+                    <div class="alert alert-info">Nenhuma receita cadastrada ainda.</div>
                 </div>
-            </div>
-            <!-- Fim da receita exemplo -->
+            <?php endif; ?>
         </div>
     </div>
 

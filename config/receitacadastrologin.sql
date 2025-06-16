@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 16/06/2025 às 15:28
+-- Host: 127.0.0.1:3307
+-- Tempo de geração: 17/06/2025 às 01:48
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -41,7 +41,11 @@ CREATE TABLE `receitas` (
 
 INSERT INTO `receitas` (`id`, `titulo`, `ingredientes`, `instrucoes`, `criado_em`) VALUES
 (1, 'Refogado de Peru', 'Peru', 'Prepare o Peru para comer.', '2025-06-16 06:45:57'),
-(2, 'Vidro com pimenta', 'Vidro e pimenta', 'Coloque a pimenta no vidro', '2025-06-16 07:24:22');
+(2, 'Vidro com pimenta', 'Vidro e pimenta', 'Coloque a pimenta no vidro', '2025-06-16 07:24:22'),
+(3, 'AQ', 'AW', 'AR', '2025-06-16 22:32:53'),
+(4, 'aa', 'aa', 'aa', '2025-06-16 22:47:52'),
+(5, 'asd', 'asd', 'asd', '2025-06-16 22:51:00'),
+(6, 'sdf', 'sdf', 'sdf', '2025-06-16 22:51:53');
 
 -- --------------------------------------------------------
 
@@ -66,7 +70,9 @@ INSERT INTO `usuario` (`id`, `nome`, `nomeUsuario`, `senha`, `cpf`, `data_nascim
 (0, 'Raichu', 'Rai', '$2y$10$uc2rBKsBku1ir62mpXuLi..B16wmkSN9HRPayi81lNs29QjnkNr5G', '567.789.345-33', '1996-12-10'),
 (0, 'Yu', 'yuk', '$2y$10$KBV7a3zJ/KMWO8O.nRHyFejP7ws0Ulb93hOT7hVIcKStf4nmRzoCa', '567.896.054-63', '1996-12-10'),
 (0, 'Zildo', 'Zil', '$2y$10$fHBEGWNyKB4nGaSTU4WbIe7hto8SWoCkI7MXIzD/yEQdN70a.u2uK', '456.789.345-23', '1996-12-10'),
-(0, 'Luis', 'lulu', '$2y$10$qqAkjQQ.Y6ScE6PYsj9b4eeVXPo/Z8jpOfBfBfDLNv8N8F1IsDGIu', '123.678.90', '1996-12-10');
+(0, 'Luis', 'lulu', '$2y$10$qqAkjQQ.Y6ScE6PYsj9b4eeVXPo/Z8jpOfBfBfDLNv8N8F1IsDGIu', '123.678.90', '1996-12-10'),
+(0, '2', '2', '$2y$10$qB63z//rSbbd7gdgf/qfselZOjbK1.llIWqnvqpCWNTzCqXmXhRrK', '22222222255', '2025-03-19'),
+(0, 'sdfsd', 'sdfs', '$2y$10$KejiQ1KdujHYPhhqg7iyWeIgYMQYSJursL9e1.JDky/D7VQpw9rOS', '23423432434', '2005-12-12');
 
 --
 -- Índices para tabelas despejadas
@@ -86,7 +92,7 @@ ALTER TABLE `receitas`
 -- AUTO_INCREMENT de tabela `receitas`
 --
 ALTER TABLE `receitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
