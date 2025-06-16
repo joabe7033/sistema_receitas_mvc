@@ -59,7 +59,7 @@ Sessao::iniciar();
     <div class="container py-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nomeUsuario']); ?></h2>
-            <button class="btn btn-receita">+ Criar Nova Receita</button>
+            <a href="/sistema_receitas_mvc/index.php?p=novaReceita" class="btn btn-receita">+ Criar Nova Receita</a>
         </div>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
