@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 16, 2025 at 02:27 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: 127.0.0.1
+-- Tempo de geração: 16/06/2025 às 15:28
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,35 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `receitacadastrologin`
+-- Banco de dados: `receitacadastrologin`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura para tabela `receitas`
+--
+
+CREATE TABLE `receitas` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `ingredientes` text NOT NULL,
+  `instrucoes` text NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `receitas`
+--
+
+INSERT INTO `receitas` (`id`, `titulo`, `ingredientes`, `instrucoes`, `criado_em`) VALUES
+(1, 'Refogado de Peru', 'Peru', 'Prepare o Peru para comer.', '2025-06-16 06:45:57'),
+(2, 'Vidro com pimenta', 'Vidro e pimenta', 'Coloque a pimenta no vidro', '2025-06-16 07:24:22');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -33,39 +55,38 @@ CREATE TABLE `usuario` (
   `nomeUsuario` varchar(45) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `cpf` varchar(14) NOT NULL,
-  `data_nascimento` date NOT NULL,
-  `token_recuperacao` varchar(100) DEFAULT NULL,
-  `data_token` datetime DEFAULT NULL
+  `data_nascimento` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `nomeUsuario`, `senha`, `cpf`, `data_nascimento`, `token_recuperacao`, `data_token`) VALUES
-(31, '3', '3', '$2y$10$Rm/96tPOvYaV2qBv374IPevbOMWBjgud6mob4tgxlN54RTyfIqSUu', '33333333333', '2025-06-15', NULL, NULL),
-(32, '1', '1', '$2y$10$0gwNH1/AzdFABafBQWmkFOuXGvo.Vi31VuvAfYAWaeaXN50g.vYT2', '111.111.111-11', '2025-06-15', NULL, NULL),
-(33, '333', '333', '$2y$10$eEGgav.nvzgBDTruL1jNj.PvfCiBKqgeq0WCeenNyXbJp/1fD2i96', '333.333.333-33', '2025-06-15', NULL, NULL);
+INSERT INTO `usuario` (`id`, `nome`, `nomeUsuario`, `senha`, `cpf`, `data_nascimento`) VALUES
+(0, 'Raichu', 'Rai', '$2y$10$uc2rBKsBku1ir62mpXuLi..B16wmkSN9HRPayi81lNs29QjnkNr5G', '567.789.345-33', '1996-12-10'),
+(0, 'Yu', 'yuk', '$2y$10$KBV7a3zJ/KMWO8O.nRHyFejP7ws0Ulb93hOT7hVIcKStf4nmRzoCa', '567.896.054-63', '1996-12-10'),
+(0, 'Zildo', 'Zil', '$2y$10$fHBEGWNyKB4nGaSTU4WbIe7hto8SWoCkI7MXIzD/yEQdN70a.u2uK', '456.789.345-23', '1996-12-10'),
+(0, 'Luis', 'lulu', '$2y$10$qqAkjQQ.Y6ScE6PYsj9b4eeVXPo/Z8jpOfBfBfDLNv8N8F1IsDGIu', '123.678.90', '1996-12-10');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `receitas`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `receitas`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `receitas`
 --
-ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+ALTER TABLE `receitas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

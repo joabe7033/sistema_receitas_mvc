@@ -73,26 +73,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?p=login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                     </li>
-                  <!--  <li class="nav-item">
-                        <a class="nav-link" href="index.php?p=listar"><i class="bi bi-card-list"></i> Listar Usuário</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-journal"></i> Receitas</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-three-dots"></i> Mais
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Opção 1</a></li>
-                            <li><a class="dropdown-item" href="#">Opção 2</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Opção 3</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Busque uma receita..." aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
