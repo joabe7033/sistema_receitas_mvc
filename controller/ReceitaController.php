@@ -13,8 +13,7 @@
             $instrucoes = $_POST['instrucoes'] ?? '';
 
             if (empty($titulo) || empty($ingredientes) || empty($instrucoes)) {
-                Sessao::set('erro', 'Todos os campos são obrigatórios!');
-                header("Location: index.php?p=novaReceita");
+                MensagensController::exibir ('Todos os campos são obrigatórios!','erro',"index.php?p=novaReceita",2);
                 exit;
             }
 
@@ -22,7 +21,7 @@
             $receita = new Receita($titulo, $ingredientes, $instrucoes);
             $receita->save();
 
-            Sessao::set('sucesso', 'Receita cadastrada com sucesso!');
+            MensagensController::exibir ('Receita Cadastrada com sucesso!','sucesso',"index.php?p=areaUsuario",2);
             header("Location: index.php?p=areaUsuario");
             exit;
         }

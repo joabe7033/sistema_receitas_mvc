@@ -56,7 +56,9 @@ class Usuario
         } catch (PDOException $e) {
             MensagensController::exibir(
                 "Erro ao cadastrar: " . $e->getMessage(),
-                "erro"
+                "erro",
+                "index.php?p=cadastro",
+                2
             );
         }
     }
