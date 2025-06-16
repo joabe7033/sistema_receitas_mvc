@@ -16,7 +16,7 @@
         <div class="container mt-5">
             <h2 class="mb-4">Cadastrar Nova Receita</h2>
             <?php if ($erro): ?>
-                <div class="alert alert-danger"><?php echo $erro; ?></div>
+                <div class="alert alert-danger"><?php echo MensagensController::exibir("Por favor digite todos os campos"), "alerta","null",2; ?></div>
             <?php endif; ?>
             <form method="post" action="index.php?p=novaReceita">
                 <div class="mb-3">
