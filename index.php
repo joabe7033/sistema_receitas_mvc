@@ -1,5 +1,4 @@
 <?php
-// Arquivo: index.php
 
 require_once "config/Banco.php";
 require_once "controller/UsuarioController.php";

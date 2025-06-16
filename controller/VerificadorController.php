@@ -20,9 +20,9 @@ class VerificadorController
             $nomeUsuario = $_POST['nomeUsuario'] ?? '';
             $senha = $_POST['senha'] ?? '';
             $cpf = $_POST['cpf'] ?? '';
-            
+            $cpf = preg_replace('/\D/', '', $cpf);
             $data_nascimento = $_POST['data_nascimento'] ?? '';
- 
+
             // Validação no Controller
             if (empty($nome) || empty($nomeUsuario) || empty($senha) || empty($cpf) || empty($data_nascimento)) {
                 echo "Preencha todos os campos!";
@@ -60,10 +60,18 @@ class VerificadorController
                 require_once "config/Sessao.php";
                 Sessao::iniciar();
                 $_SESSION['nomeUsuario'] = $user['nomeUsuario'];
+
+                if (isset($_POST['lembrar'])) {
+                    Sessao::setCookie('usuario', $_POST['usuario'], time() + 60 * 60 * 24 * 30);
+                    Sessao::setCookie('senha', $_POST['senha'], time() + 60 * 60 * 24 * 30);
+                } else {
+                    Sessao::removeCookie('usuario');
+                    Sessao::removeCookie('senha');
+                }
                 header("Location: index.php?p=areaUsuario");
                 exit;
             } else {
-                echo "Usuário ou senha inválidos!";
+                header("Location: index.php?p=login&erro=1");
                 exit;
             }
         }

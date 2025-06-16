@@ -22,6 +22,8 @@ class UsuarioController
     {
         Sessao::iniciar();
         $csrf_token = Seguranca::gerarTokenCSRF();
+        $usuario_cookie = Sessao::getCookie('usuario') ?? '';
+        $senha_cookie = Sessao::getCookie('senha') ?? '';
         include "view/Login.php";
     }
 
@@ -87,6 +89,11 @@ class UsuarioController
     {
         Sessao::iniciar();
         Sessao::destruir();
+        if (isset($_GET['forget']) && $_GET['forget'] == '1') {
+            Sessao::removeCookie('usuario');
+            Sessao::removeCookie('senha');
+        }
+
         header("Location: index.php?p=login");
         exit;
     }

@@ -51,6 +51,9 @@ Sessao::iniciar();
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?p=logout">Sair</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="index.php?p=logout&forget=1" class="btn btn-danger">Sair e Esquecer</a>
+                    </li>
                 </ul>
             </div>
         </div>
